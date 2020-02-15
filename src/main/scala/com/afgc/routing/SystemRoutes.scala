@@ -18,7 +18,7 @@ trait SystemRoutes extends UserRoutes {
   def routes: Route =
     cors(CorsSettings.defaultSettings.withAllowedOrigins(HttpOriginRange.create(HttpOrigin("http://localhost:3000")))) {
       extractRequest { req =>
-        healthRoute ~ createPackage
+        healthRoute ~ createUser ~ getUsers
       }
     }
 
